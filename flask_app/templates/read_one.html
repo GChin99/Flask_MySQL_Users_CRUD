@@ -39,8 +39,10 @@
         <!-- needed to change the edit and delete link from one_user to single_user -->
         <!-- one_user was the name in the for loop, while single_user is the variable we assigned for jinja syntax-->
         <a href="/edit/{{single_user.id}}"> Edit</a>
+        <!-- WHen using a form, the default submit will be a button.  To make it look like a link you will need to use CSS -->
         <form action="/delete/{{single_user.id}}" method="post">
             <button class="link-danger">Delete</button>
+            <!-- The input type submit doesnt need to be used on a delete form because we are not acutally submitting anything  -->
             <!-- <input type="submit" value="Delete"> -->
         </form>
     </div>

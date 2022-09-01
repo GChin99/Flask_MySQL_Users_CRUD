@@ -35,6 +35,7 @@
                             <a href="/edit/{{one_user.id}}"> Edit |</a>
                             <!-- There is nothing wrong with using an a tag for deletion, but Zack prefers uisng forms  -->
                             <!-- <a href="/delete{{one_user.id}}">Delete</a> -->
+                            <!-- WHen using a form, the default submit will be a button.  To make it look like a link you will need to use CSS -->
                             <form action="/delete/{{one_user.id}}" method="post">
                                 <input type="submit" value="Delete">
                             </form>
