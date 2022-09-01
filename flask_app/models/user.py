@@ -40,6 +40,7 @@ class User:
         # data is a dictionary that will be passed into the save method from server.py
         results = connectToMySQL("users_assignment").query_db( query, data )
         print (results)
+        # comes back as the new row ID
         return results
 
 # -------------------The R out of CRUD (read one)-----------------------------
