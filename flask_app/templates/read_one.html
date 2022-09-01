@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <title>One User</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .nav {
+        width: 500px;
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>User {{single_user.id}}</h1>
+        <a href="/users">Home</a>
+    </div>
+    <div class="user_info">
+        <p>Full Name: {{single_user.first_name}} {{single_user.last_name}}</p>
+        <p>Email: {{single_user.email}}</p>
+        <p>Created On: {{single_user.created_at}}</p>
+        <p>Last Updated On: {{single_user.updated_at}}</p>
+    </div>
+    <div class="nav">
+        <!-- needed to change the edit and delete link from one_user to single_user -->
+        <!-- one_user was the name in the for loop, while single_user is the variable we assigned for jinja syntax-->
+        <a href="/edit/{{single_user.id}}"> Edit</a>
+        <form action="/delete/{{single_user.id}}" method="post">
+            <button class="link-danger">Delete</button>
+            <!-- <input type="submit" value="Delete"> -->
+        </form>
+    </div>
+</body>
+</html>

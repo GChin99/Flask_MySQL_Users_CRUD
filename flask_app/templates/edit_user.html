@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+<style>
+    .container{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
+    .top {
+        width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .bottom {
+        width: 500px;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .edit_form{
+        margin: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <h1>Edit User {{single_user.id}}</h1>
+            <a href="/users">Home</a>
+        </div>
+        <div class="bottom">
+        <form action="/update/{{single_user.id}}" method="post">
+            <div class="edit_form">
+                <label>First Name</label>
+                <input type="text" name="fname" value="{{single_user.first_name}}">
+            </div>
+            <div class="edit_form">
+                <label>Last Name</label>
+                <input type="text" name="lname" value="{{single_user.last_name}}">
+            </div>
+            <div class="edit_form">
+                <label>Email</label>
+                <input type="text" name="uemail" value="{{single_user.email}}">
+            </div>
+            <input type="submit" value="Update User">
+        </form>
+        </div>
+    </div>
+</body>
+</html>

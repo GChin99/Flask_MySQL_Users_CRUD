@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .container{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
+    .top {
+        width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .bottom {
+        width: 500px;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .new-form{
+        margin: 20px;
+    }
+</style>
+</head>
+<body>
+        <!-- form to create friends -->
+    <div class="container">
+        <div class="top">
+            <h1>Add a New User</h1>
+            <a href="/users">Home</a>
+        </div>
+        <!-- We need a method to handle the submission of our form. -->
+        <div class="bottom">
+            <form action="/create_user" method="POST">
+                <div class="new-form">
+                    <label for="fname">First Name:</label>
+                    <input type="text" name="fname"><!--the attribue name matches the data dictionary key in the method and the SQL VALUE variable names in the query-->
+                </div>
+                <div class="new-form">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" name="lname">
+                </div>
+                <div class="new-form">
+                    <label for="uemail" >Email:</label>
+                    <input type="text" name="uemail">
+                </div>
+                <input type="submit" value="Add User">
+            </form> 
+        </div>
+    </div>
+</body>
+</html>
